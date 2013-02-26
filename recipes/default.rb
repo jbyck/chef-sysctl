@@ -30,10 +30,5 @@ if node.attribute?(:sysctl)
   end
 end
 
-cookbook_file "/etc/sysctl.d/69-chef-static.conf" do
-  ignore_failure true
-  mode "0644"
-  notifies :start, "service[procps]"
-end
 
 service "procps"
